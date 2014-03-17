@@ -38,6 +38,7 @@ ADD ./resources/tomcat/alfresco.conf /etc/init/alfresco.conf
 ### FIX - This file needs to be populated with data
 ADD ./resources/tomcat/alfresco-global.properties /var/lib/tomcat7/shared/classes/
 RUN chown -R tomcat7:tomcat7 /var/lib/tomcat7 
+RUN chown -R root:tomcat7 /etc/tomcat7 
 
 #ADD http://dl.alfresco.com/release/community/build-4848/alfresco-community-4.2.e.zip /tmp/
 ADD resources/alfresco-community-4.2.e.zip /tmp/
