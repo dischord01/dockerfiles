@@ -46,4 +46,5 @@ used to access the corresponding resources.
 #### resources/tomcat/catalina.properties
 This file defines the standard Java properties for the Catalina java class
 expressed in [Security Policy syntax](http://tomcat.apache.org/tomcat-7.0-doc/security-manager-howto.html).  
-
+In addition, this file also defines some string cache settings which can be
+used to optimize aspects of Tomcat's performance.
