@@ -40,8 +40,7 @@ ADD ./resources/tomcat/alfresco-global.properties /var/lib/tomcat7/shared/classe
 RUN chown -R tomcat7:tomcat7 /var/lib/tomcat7 
 RUN chown -R root:tomcat7 /etc/tomcat7 
 
-#ADD http://dl.alfresco.com/release/community/build-4848/alfresco-community-4.2.e.zip /tmp/
-ADD resources/alfresco-community-4.2.e.zip /tmp/
+ADD http://dl.alfresco.com/release/community/build-4848/alfresco-community-4.2.e.zip /tmp/
 
 RUN unzip -q  /tmp/alfresco-community-4.2.e.zip -d /tmp/alfrescoinstall &&  cp /tmp/alfrescoinstall/web-server/webapps/*.war  /var/lib/tomcat7/webapps/ && cp /tmp/alfrescoinstall/web-server/endorsed/*.jar /var/lib/tomcat7/endorsed/
 EXPOSE 8080
