@@ -6,7 +6,8 @@ read -p "Use default settings? [y/n] " defaults
 
 port="8080"
 proto="https"
-if [ `echo $defaults | tr a-Z A-Z`  != "Y" ]; then
+
+if [ "`echo $defaults | tr a-z A-Z`"  != "Y" ]; then
 	read -p "Enter MySQL port: " mysql_port
 	read -p "Enter MySQL username: " mysql_user
 	read -p "Enter MySQL password: " mysql_pass
