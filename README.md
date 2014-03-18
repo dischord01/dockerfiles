@@ -48,3 +48,16 @@ This file defines the standard Java properties for the Catalina java class
 expressed in [Security Policy syntax](http://tomcat.apache.org/tomcat-7.0-doc/security-manager-howto.html).  
 In addition, this file also defines some string cache settings which can be
 used to optimize aspects of Tomcat's performance.
+
+
+### SSL Configuration
+A sample keystore file is created in /root/.keystore via the command:
+
+```
+keytool -genkey -alias tomcat -keyalg RSA   -keystore /root/.keystore \
+  -storepass changeit -keypass changeit 
+  -dname "CN=localhost, OU=Docker, O=CoreOS, L=San Francisco, S=California, C=US"
+```
+
+If you wish you can change this command or generate your own keystore, add it
+to the Dockerfile and update the `server.xml` file.

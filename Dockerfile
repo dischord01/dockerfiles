@@ -44,5 +44,8 @@ RUN chown -R root:tomcat7 /etc/tomcat7
 ADD resources/alfresco-community-4.2.e.zip /tmp/
 
 RUN unzip -q  /tmp/alfresco-community-4.2.e.zip -d /tmp/alfrescoinstall &&  cp /tmp/alfrescoinstall/web-server/webapps/*.war  /var/lib/tomcat7/webapps/ && cp /tmp/alfrescoinstall/web-server/endorsed/*.jar /var/lib/tomcat7/endorsed/
+EXPOSE 8080
+EXPOSE 8443
 
+RUN keytool -genkey -alias tomcat -keyalg RSA   -keystore /root/.keystore -storepass changeit -keypass changeit -dname "CN=localhost, OU=Docker, O=CoreOS, L=San Francisco, S=California, C=US"
 
