@@ -49,3 +49,8 @@ EXPOSE 8443
 
 RUN keytool -genkey -alias tomcat -keyalg RSA   -keystore /root/.keystore -storepass changeit -keypass changeit -dname "CN=localhost, OU=Docker, O=CoreOS, L=San Francisco, S=California, C=US"
 
+# Install PostgreSQL 
+#RUN add-apt-repository ppa:pitti/postgresql && apt-get update && apt-get -y install postgresql-9.2 postgresql-client-9.2 postgresql-contrib-9.2
+#RUN sudo -u postgres createuser -P -d -r -s alfresco && sudo -u postgres createdb -O alfresco alfresco
+
+
